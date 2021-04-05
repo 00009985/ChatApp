@@ -1,0 +1,40 @@
+doctype html
+html(lang="en")
+  head 
+    title Chat App
+    link(rel='stylesheet' href='/static/styles.css')
+
+  body
+    .chat-container
+      header.chat-header
+        h1 Chat App
+        a.btn(href='home.pug') Leave Room
+      main.chat-main
+        .chat-sidebar
+          h3 Room name
+          h2#room-name BIS1
+          h3 Users
+          ul#users
+            li Brad
+            li John
+            li Mary
+            li Paul
+            li Mike
+        .chat-messages
+          .message
+            p.meta
+              | Brad
+              |
+              span 9:12 pm
+            p.text hello brad nice to meet you
+      .chat-form-container
+        form#chat-form
+          input#msg(
+              type='text'
+              placeholder='Enter message'
+              required
+              autocomplete='off')
+          button.btn Send
+    script(src='/socket.io/socket.io.js')
+    script(src='../static/js/main.js')
+

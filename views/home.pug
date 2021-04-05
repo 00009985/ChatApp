@@ -1,0 +1,32 @@
+doctype html
+html(lang="en")
+  head 
+    title Chat App
+    link(rel='stylesheet' href='/static/styles.css')
+  
+  body 
+    .join-container
+      header.join-header
+        h1 Chat App
+      main.join-main
+        form(method='get' action='/chat')
+          .form-control
+            label(for='username') Username
+              input(
+                  type='text'
+                  name='username'
+                  id='username'
+                  placeholder='Enter username'
+                  required)
+          .form-control
+            label(for='room') Room
+            select(name='room' id='room')
+              option(value='BIS1') BIS1
+              option(value='BIS2') BIS2
+              option(value='BIS3') BIS3
+              option(value='BIS4') BIS4
+              option(value='BIS5') BIS5
+              option(value='BIS6') BIS6
+              option(value='BIS7') BIS7
+
+          button.btn(type='submit') Join chat
