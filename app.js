@@ -22,6 +22,11 @@ io.on('connection', socket => {
     socket.on('disconnect', () =>{
        io.emit('message', 'A user has left the chat');
     });
+
+    // listen for chatMessage
+    socket.on('chatMessage', msg =>{
+        io.emit('message', msg);
+    })
 });
 
 app.get('/', (req, res) =>{
