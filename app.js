@@ -1,5 +1,6 @@
 const path = require('path');
 const http = require('http');
+const fs = require('fs');
 const express = require ('express');
 const socketio = require('socket.io');
 const formatMessage = require('./messages');
@@ -9,6 +10,7 @@ const server = http.createServer(app);
 const io = socketio(server);
 const PORT = 3000 || process.env.PORT;
 const botName = 'ChatApp Bot';
+
 app.set('view engine', 'pug')
 app.use('/static', express.static(path.join(__dirname, 'public')));
 
@@ -47,11 +49,27 @@ io.on('connection', socket => {
     });
 
     // listen for chatMessage
-    socket.on('chatMessage', msg =>{
-        const user = getCurrentUser(socket.id);
-        io.to(user.room).emit('message', formatMessage(user.username, msg));
+        socket.on('chatMessage', msg =>{
+            const user = getCurrentUser(socket.id);
+            io.to(user.room).emit('message', formatMessage(user.username, msg));
     })
-});
+
+    // socket.on("search list", () => {
+    //     fs.writeFile(__dirname + '/users.json', data, (err) => {
+    //         if (err) throw err
+
+    //         const users = JSON.parse(data)
+    //         users.push({
+    //             username: username,
+    //             room: room
+    //         })
+
+    //     })
+    // })
+
+    
+}); 
+
 
 app.get('/chat', (req, res) =>{
     res.render('chat')
@@ -64,5 +82,7 @@ app.get('/', (req, res) =>{
 app.get('/home', (req, res) =>{
     res.render('home')
 })
+
+
 
 server.listen(PORT, () => console.log(`Server is running on port ${PORT}`));

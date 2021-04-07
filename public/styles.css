@@ -178,6 +178,12 @@ a {
 	width: 100%;
 }
 
+.error {
+    display: inline-block;
+    padding: 10px;
+    border: 1px solid red;
+}
+
 @media (max-width: 700px) {
 	.chat-main {
 		display: block;
