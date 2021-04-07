@@ -1,11 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@300&family=Shadows+Into+Light&display=swap');
 
 :root {
-	--dark-color-a: #667aff;
-	--dark-color-b: #7386ff;
+	--dark-color-a: rgb(197, 164, 197);
+	--dark-color-b: #a498e7;
 	--light-color: #e6e9ff;
-	--success-color: #5cb85c;
-	--error-color: #d9534f;
 }
 
 * {
@@ -33,9 +31,10 @@ a {
 	cursor: pointer;
 	padding: 5px 15px;
 	background: var(--light-color);
-	color: var(--dark-color-a);
+	color: black;
 	border: 0;
 	font-size: 17px;
+	border-radius: 30px;
 }
 
 /* Chat Page */
@@ -122,6 +121,11 @@ a {
 	display: flex;
 }
 
+.chat-form-container input{
+	border-radius: 10px;
+	border: 1px solid grey;
+}
+
 .chat-form-container input[type='text'] {
 	font-size: 16px;
 	padding: 5px;
@@ -135,6 +139,12 @@ a {
 	margin: 80px auto;
 	color: #fff;
 	border-radius: 30px;
+}
+
+.form-control input,
+.form-control select{
+	border-radius: 10px;
+	border: 1px solid grey;
 }
 
 .join-header {
