@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@300&family=Shadows+Into+Light&display=swap');
 
 :root {
 	--dark-color-a: #667aff;
@@ -15,7 +15,7 @@
 }
 
 body {
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Lexend', sans-serif;
 	font-size: 16px;
 	background: var(--light-color);
 	margin: 20px;
@@ -45,6 +45,7 @@ a {
 	background: #fff;
 	margin: 30px auto;
 	overflow: hidden;
+	border-radius: 30px;
 }
 
 .chat-header {
@@ -96,6 +97,8 @@ a {
 	margin-bottom: 15px;
 	background-color: var(--light-color);
 	border-radius: 5px;
+	font-family: 'Shadows Into Light', cursive;
+	font-size: 25px;
 }
 
 .chat-messages .message .meta {
@@ -131,19 +134,22 @@ a {
 	max-width: 500px;
 	margin: 80px auto;
 	color: #fff;
+	border-radius: 30px;
 }
 
 .join-header {
 	text-align: center;
 	padding: 20px;
 	background: var(--dark-color-a);
-	border-top-left-radius: 5px;
-	border-top-right-radius: 5px;
+	border-top-left-radius: 30px;
+	border-top-right-radius: 30px;
 }
 
 .join-main {
 	padding: 30px 40px;
 	background: var(--dark-color-b);
+	border-bottom-left-radius: 30px;
+	border-bottom-right-radius: 30px;
 }
 
 .join-main p {
@@ -178,10 +184,8 @@ a {
 	width: 100%;
 }
 
-.error {
-    display: inline-block;
-    padding: 10px;
-    border: 1px solid red;
+.bottom-text{
+	text-align: center;
 }
 
 @media (max-width: 700px) {

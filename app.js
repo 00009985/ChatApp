@@ -3,8 +3,8 @@ const http = require('http');
 const fs = require('fs');
 const express = require ('express');
 const socketio = require('socket.io');
-const formatMessage = require('./messages');
-const { userJoin, getCurrentUser, userLeave, getRoomUsers } = require('./userList');
+const formatMessage = require('./utils/messages');
+const { userJoin, getCurrentUser, userLeave, getRoomUsers } = require('./utils/userList');
 const app = express();
 const server = http.createServer(app);
 const io = socketio(server);
@@ -53,21 +53,6 @@ io.on('connection', socket => {
             const user = getCurrentUser(socket.id);
             io.to(user.room).emit('message', formatMessage(user.username, msg));
     })
-
-    // socket.on("search list", () => {
-    //     fs.writeFile(__dirname + '/users.json', data, (err) => {
-    //         if (err) throw err
-
-    //         const users = JSON.parse(data)
-    //         users.push({
-    //             username: username,
-    //             room: room
-    //         })
-
-    //     })
-    // })
-
-    
 }); 
 
 
