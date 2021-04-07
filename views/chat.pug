@@ -8,7 +8,7 @@ html(lang="en")
     .chat-container
       header.chat-header
         h1 Chat App
-        a.btn(href='home.pug') Leave Room
+        a.btn(href='/home', method='get', action='/') Leave Room
       main.chat-main
         .chat-sidebar
           h3 Room name
@@ -21,12 +21,6 @@ html(lang="en")
             li Paul
             li Mike
         .chat-messages
-          .message
-            p.meta
-              | Brad
-              |
-              span 9:12 pm
-            p.text hello brad nice to meet you
       .chat-form-container
         form#chat-form
           input#msg(
@@ -35,6 +29,8 @@ html(lang="en")
               required
               autocomplete='off')
           button.btn Send
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.10.1/qs.min.js" 
+    integrity="sha512-aTKlYRb1QfU1jlF3k+aS4AqTpnTXci4R79mkdie/bp6Xm51O5O3ESAYhvg6zoicj/PD6VYY0XrYwsWLcvGiKZQ==" crossorigin="anonymous")
     script(src='/socket.io/socket.io.js')
     script(src='../static/js/main.js')
 
