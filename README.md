@@ -28,3 +28,6 @@ node app
 ### Chat application repository on github
 https://github.com/00009985/ChatApp.git
 
+### Link to Chat application hosted on glitch
+https://sable-rift-cellar.glitch.me/
+
